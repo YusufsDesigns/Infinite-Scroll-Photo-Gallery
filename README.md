@@ -23,7 +23,7 @@ The application also features responsive design, error handling, and a loading i
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-##Live Link
+## Live Link
 [Infinite Scroll Photo Gallery](https://infinite-scroll-photo-gallery-yusufthedev.vercel.app/)
 
 ## Getting Started
