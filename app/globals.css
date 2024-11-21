@@ -1,15 +1,3 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html,
 body {
   max-width: 100vw;
@@ -17,8 +5,6 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +21,114 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+img{
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+}
+
+.image{
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  margin-bottom: 30px;
+}
+
+.image:hover {
+  transform: scale(1.02); /* Zoom in slightly */
+}
+
+h1{
+  margin-bottom: 10px;
+}
+
+.mobile_view{
+  display: none;
+}
+
+.page{
+  max-width: 1300px;
+  margin: 10px auto;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+.image_feed{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555; /* Neutral color for the text */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for elegance */
+}
+
+.caption:hover {
+  color: #000; /* Slightly darker color on hover */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  display: inline-block;
+  width: 30px; /* Adjust size */
+  height: 30px; /* Adjust size */
+  border: 4px solid rgba(0, 0, 0, 0.1); /* Spinner border */
+  border-radius: 50%;
+  border-top-color: #553BC1; /* Customize color */
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 1000px) {
+  .pc_view{
+    display: none;
+  }
+
+  .mobile_view{
+    display: block;
+  }
+  
+  .image{
+    margin-bottom: 20px;
+  }
+  
+  .image_feed{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .image{
+    margin-bottom: 10px;
+  }
+  
+  .image_feed{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .caption {
+    font-size: 0.6rem;
   }
 }
